@@ -1,14 +1,24 @@
 import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
-import Navbar from "./components/Navbar";
+import Dashboard from "./pages/Dashboard";
+import About from "./pages/About";
+import MyParts from "./pages/MyParts";
+import NoPage from "./pages/NoPage";
+import SuggestBuild from "./pages/SuggestBuild";
 
 function App() {
   return (
-    <div>
-      <Navbar />
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route index element={<Dashboard />} />
+        <Route path="/dashboard" element={<Dashboard />}></Route>
+        <Route path="/myparts" element={<MyParts />}></Route>
+        <Route path="/suggestbuild" element={<SuggestBuild />}></Route>
+        <Route path="/about" element={<About />}></Route>
+        <Route path="*" element={<NoPage />}></Route>
+      </Routes>
+    </BrowserRouter>
   );
 }
 

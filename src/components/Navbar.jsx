@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import { AiOutlineClose, AiOutlineMenu } from "react-icons/ai";
 import { MdDashboard } from "react-icons/md";
 import { FiCpu } from "react-icons/fi";
@@ -16,22 +17,30 @@ const Navbar = () => {
     <div className="flex justify-between items-center h-24 max-w-[1240px] mx-auto px-4 text-white">
       <h1 className="text-3xl font-bold text-[#00df9a]">RigConfig</h1>
       <ul className="hidden md:flex">
-        <li className="p-4 flex items-center hover:bg-[#202020] hover:text-[#00df9a] transition duration-300 cursor-default rounded-xl">
-          <MdDashboard className="text-xl mr-2" />
-          <span>Dashboard</span>
-        </li>
-        <li className="p-4 flex items-center hover:bg-[#202020] hover:text-[#00df9a] transition duration-300 cursor-default rounded-xl">
-          <FiCpu className="text-xl mr-2" />
-          <span>My PC Parts</span>
-        </li>
-        <li className="p-4 flex items-center hover:bg-[#202020] hover:text-[#00df9a] transition duration-300 cursor-default rounded-xl">
-          <HiOutlineSparkles className="text-xl mr-2" />
-          <span>Suggest-a-Build</span>
-        </li>
-        <li className="p-4 flex items-center hover:bg-[#202020] hover:text-[#00df9a] transition duration-300 cursor-default rounded-xl">
-          <IoMdInformationCircleOutline className="text-xl mr-2" />
-          <span>About</span>
-        </li>
+        <Link to="/dashboard">
+          <li className="flex items-center p-4 hover:bg-[#202020] hover:text-[#00df9a] transition duration-300 cursor-default rounded-xl">
+            <MdDashboard className="text-xl mr-2" />
+            <span>Dashboard</span>
+          </li>
+        </Link>
+        <Link to="/MyParts">
+          <li className="flex items-center p-4 hover:bg-[#202020] hover:text-[#00df9a] transition duration-300 cursor-default rounded-xl">
+            <FiCpu className="text-xl mr-2" />
+            <span>My PC Parts</span>
+          </li>
+        </Link>
+        <Link to="/SuggestBuild">
+          <li className="flex items-center p-4 hover:bg-[#202020] hover:text-[#00df9a] transition duration-300 cursor-default rounded-xl">
+            <HiOutlineSparkles className="text-xl mr-2" />
+            <span>Suggest-a-Build</span>
+          </li>
+        </Link>
+        <Link to="/About">
+          <li className="flex items-center p-4 hover:bg-[#202020] hover:text-[#00df9a] transition duration-300 cursor-default rounded-xl">
+            <IoMdInformationCircleOutline className="text-xl mr-2" />
+            <span>About</span>
+          </li>
+        </Link>
       </ul>
       <div onClick={handleNav} className="block md:hidden">
         {nav ? <AiOutlineClose size={25} /> : <AiOutlineMenu size={25} />}
