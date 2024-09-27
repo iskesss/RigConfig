@@ -17,25 +17,25 @@ const Navbar = () => {
     <div className="flex justify-between items-center h-24 max-w-[1240px] mx-auto px-4 text-white">
       <h1 className="text-3xl font-bold text-[#00df9a]">RigConfig</h1>
       <ul className="hidden md:flex">
-        <Link to="/dashboard">
+        <Link to="/dashboard" draggable="false">
           <li className="flex items-center p-4 hover:bg-[#202020] hover:text-[#00df9a] transition duration-300 cursor-default rounded-xl">
             <MdDashboard className="text-xl mr-2" />
             <span>Dashboard</span>
           </li>
         </Link>
-        <Link to="/MyParts">
+        <Link to="/myparts" draggable="false">
           <li className="flex items-center p-4 hover:bg-[#202020] hover:text-[#00df9a] transition duration-300 cursor-default rounded-xl">
             <FiCpu className="text-xl mr-2" />
             <span>My PC Parts</span>
           </li>
         </Link>
-        <Link to="/SuggestBuild">
+        <Link to="/suggestbuild" draggable="false">
           <li className="flex items-center p-4 hover:bg-[#202020] hover:text-[#00df9a] transition duration-300 cursor-default rounded-xl">
             <HiOutlineSparkles className="text-xl mr-2" />
             <span>Suggest-a-Build</span>
           </li>
         </Link>
-        <Link to="/About">
+        <Link to="/about" draggable="false">
           <li className="flex items-center p-4 hover:bg-[#202020] hover:text-[#00df9a] transition duration-300 cursor-default rounded-xl">
             <IoMdInformationCircleOutline className="text-xl mr-2" />
             <span>About</span>
@@ -55,22 +55,30 @@ const Navbar = () => {
         <h1 className="w-full text-3xl font-bold text-[#00df9a] m-4">
           RigConfig
         </h1>
-        <li className="p-4 border-b border-gray-600">
-          <MdDashboard className="inline mr-2" />
-          <span>Dashboard</span>
-        </li>
-        <li className="p-4 border-b border-gray-600">
-          <FiCpu className="inline mr-2" />
-          <span>My PC Parts</span>
-        </li>
-        <li className="p-4 border-b border-gray-600">
-          <HiOutlineSparkles className="inline mr-2 " />
-          <span>Suggest-a-Build</span>
-        </li>
-        <li className="p-4 border-b border-gray-600">
-          <IoMdInformationCircleOutline className="inline mr-2" />
-          <span>About</span>
-        </li>
+        <Link to="/dashboard" draggable="false">
+          <li className="p-4 border-b border-gray-600">
+            <MdDashboard className="inline mr-2" />
+            <span>Dashboard</span>
+          </li>
+        </Link>
+        <Link to="/myparts" draggable="false">
+          <li className="p-4 border-b border-gray-600">
+            <FiCpu className="inline mr-2" />
+            <span>My PC Parts</span>
+          </li>
+        </Link>
+        <Link to="/suggestbuild" draggable="false">
+          <li className="p-4 border-b border-gray-600">
+            <HiOutlineSparkles className="inline mr-2 " />
+            <span>Suggest-a-Build</span>
+          </li>
+        </Link>
+        <Link to="/about" draggable="false">
+          <li className="p-4 border-b border-gray-600">
+            <IoMdInformationCircleOutline className="inline mr-2" />
+            <span>About</span>
+          </li>
+        </Link>
       </ul>
     </div>
   );
