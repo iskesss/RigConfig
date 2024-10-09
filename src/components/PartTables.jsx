@@ -10,26 +10,50 @@ import {
   Typography,
 } from "@material-tailwind/react";
 
-const TABLE_HEAD = [
-  {
-    head: "Manufacturer",
-  },
-  {
-    head: "Model Name",
-  },
-  {
-    head: "Functioning?",
-  },
-  {
-    head: "TDP (watts)",
-  },
-  {
-    head: "Cores",
-  },
-  {
-    head: "Threads",
-  },
-];
+// const CPU_TABLE_HEAD = [
+//   {
+//     head: "Manufacturer",
+//   },
+//   {
+//     head: "Model Name",
+//   },
+//   {
+//     head: "Functioning?",
+//   },
+//   {
+//     head: "TDP (watts)",
+//   },
+//   {
+//     head: "Cores",
+//   },
+//   {
+//     head: "Threads",
+//   },
+// ];
+
+const TABLE_HEADS = {
+  cpu: [
+    { head: "Manufacturer" },
+    { head: "Model Name" },
+    { head: "Functioning?" },
+    { head: "TDP (watts)" },
+    { head: "Cores" },
+    { head: "Threads" },
+  ],
+  gpu: [
+    { head: "Manufacturer" },
+    { head: "Model Name" },
+    { head: "Functioning?" },
+    { head: "GBs VRAM" },
+    { head: "TDP (watts)" },
+  ],
+  // Add additional parts here
+  // e.g. ram: [...],
+  //      storage: [...],
+  //      motherboard: [...],
+  //      psu: [...],
+  //      case: [...],
+};
 
 const TABLE_ROWS = [
   {
@@ -62,7 +86,7 @@ const TABLE_ROWS = [
   },
 ];
 
-export function CPUtable() {
+export function Parttable({ componentType }) {
   return (
     <Card className="h-full w-full flex flex-col">
       <CardHeader
@@ -71,7 +95,7 @@ export function CPUtable() {
         className="mb-2 rounded-none p-2"
       >
         {/* <div className="w-full md:w-96">
-          <Input
+          <Input  
             label="Search Invoice"
             icon={<MagnifyingGlassIcon className="h-5 w-5" />}
           />
@@ -80,7 +104,7 @@ export function CPUtable() {
       <table className="w-full min-w-max table-auto text-left">
         <thead>
           <tr>
-            {TABLE_HEAD.map(({ head, icon }) => (
+            {TABLE_HEADS[componentType].map(({ head, icon }) => (
               <th key={head} className="border-b border-gray-300 p-4">
                 <div className="flex items-center gap-1">
                   {icon}

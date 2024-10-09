@@ -1,6 +1,6 @@
 import React from "react";
 import Navbar from "../components/Navbar";
-import { CPUtable } from "../components/PartTables";
+import { Parttable } from "../components/PartTables";
 
 const MyParts = () => {
   return (
@@ -17,7 +17,7 @@ const MyParts = () => {
           <input type="text" />
           <div className="outline bg-[#00df9a]">ADD</div>
         </div>
-        <CPUtable />
+        <Parttable componentType={"cpu"} />
       </div>
     </>
   );
